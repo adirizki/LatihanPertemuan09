@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.latihanpertemuan09.R
 import com.example.latihanpertemuan09.adapter.HomeAdapter
@@ -39,6 +40,9 @@ class HomeFragment : Fragment() {
         }
         viewModel.showDataMahasiswa()
 
+        binding.btnAdd.setOnClickListener{
+            findNavController().navigate(R.id.action_homeFragment_to_addFragment)
+        }
     }
 
 }
